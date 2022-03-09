@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.socialxtest.Login"
+        android:label="Login" >
+        <action
+            android:id="@+id/action_login_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_login_to_newsFeed"
+            app:destination="@id/newsFeed" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.socialxtest.SignUp"
+        android:label="SignUp" >
+        <action
+            android:id="@+id/action_signUp_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_signUp_to_newsFeed"
+            app:destination="@id/newsFeed" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFeed"
+        android:name="com.example.socialxtest.newsfeed.NewsFeed"
+        android:label="NewsFeed" />
+</navigation>
