@@ -17,5 +17,8 @@
     <string name="password">Password</string>
     <string name="contact_no">Contact no</string>
     <string name="term_amp_condition"><u>term &amp; condition</u></string>
+    <string name="fetching_articles">Fetching Articles</string>
+    <string name="Client_id">580185392190-kj7t4du8jg75pjv55369neubvkn9gdbr.apps.googleusercontent.com</string>
+
 
 </resources>

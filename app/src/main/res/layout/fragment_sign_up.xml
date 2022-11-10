@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -11,7 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_Gray"
-        tools:context=".SignUp">
+        tools:context=".ui.SignUp">
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <LinearLayout
             android:id="@+id/header_tile"
@@ -50,6 +58,7 @@
             app:layout_constraintTop_toBottomOf="@id/header_tile">
 
             <TextView
+                android:id="@+id/login_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -58,13 +67,13 @@
 
             <TextView
 
-                android:textColor="@color/white"
-                android:background="@drawable/solid_shape_left_right_down_curve"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/solid_shape_left_right_down_curve"
                 android:gravity="center"
-                android:text="@string/sign_up" />
+                android:text="@string/sign_up"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -131,6 +140,8 @@
                         android:id="@+id/name_edittext"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_person"
+                        android:drawableTint="@color/color_Red"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/name_label" />
@@ -152,6 +163,8 @@
                         android:id="@+id/email_id_edittext"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_email"
+                        android:drawableTint="@color/color_Red"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/email_label" />
@@ -169,15 +182,17 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/email_id_edittext" />
 
-                    <LinearLayout
-                        android:id="@+id/contact_container"
+                    <EditText
+                        android:id="@+id/contact_edittext"
                         android:layout_width="match_parent"
+                        android:drawableEnd="@drawable/ic_baseline_local_phone_24"
+                        android:drawableTint="@color/color_Red"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/contact_label"
+                        android:orientation="horizontal"
                         app:layout_constraintLeft_toLeftOf="parent"
-                        android:orientation="horizontal">
+                        app:layout_constraintTop_toBottomOf="@id/contact_label">
 
-                    </LinearLayout>
+                    </EditText>
 
                     <TextView
                         android:id="@+id/password_label"
@@ -190,12 +205,14 @@
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/contact_container" />
+                        app:layout_constraintTop_toBottomOf="@id/contact_edittext" />
 
                     <EditText
                         android:id="@+id/password_edittext"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_baseline_lock_24"
+                        android:drawableTint="@color/color_Red"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/password_label" />
